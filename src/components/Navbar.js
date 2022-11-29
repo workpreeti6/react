@@ -4,7 +4,10 @@ function Navbar(props) {
   return (
     <>
       <nav
-        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
+        className={`navbar navbar-expand-lg navbar-${props.mode}`}
+        style={{
+          backgroundColor: props.mode === "dark" ? "#203a53" : "#f8f9fa",
+        }}
       >
         <div className="container-fluid">
           <Link className="navbar-brand" to="#">
@@ -56,11 +59,11 @@ function Navbar(props) {
               />
               <label
                 className={`form-check-label text-${
-                  props.mode == "light" ? "dark" : "light"
+                  props.mode === "light" ? "dark" : "light"
                 }`}
                 htmlFor="flexSwitchCheckDefault"
               >
-                {props.mode == "light"
+                {props.mode === "light"
                   ? "Enable Dark Mode"
                   : "Enable Light Mode"}
               </label>
